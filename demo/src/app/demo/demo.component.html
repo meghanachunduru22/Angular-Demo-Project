@@ -1,0 +1,70 @@
+<!-- 
+DOCUMENTATION
+br is for breaking the line and to get into next line.
+two curly braces are used for 1 way data binding and to get info from ts to html
+ul means unordered list, ol means ordered list numbered
+ngfor is directive in angular . Something added to tag is called directive
+-->
+<!--
+<h1><p>Hi! This is Demo Component</p></h1>
+Your Name is: {{name}} <br/>
+Your Age is: {{age}} <br/>
+Your Salary is: {{salary}} <br/>
+Your Marritial Status : {{isMarried}} <br/>
+
+<h2>Hobbies :</h2>
+<ol>
+    <li *ngFor = "let hobby of hobbies">{{hobby}}</li>
+</ol>
+<h3>Address :</h3>
+Door No:{{address.doorNo}}<br/>
+Street : {{address.street}}<br/>
+City : {{address.city}}<br/>
+
+<button (click)="showMessage()">Click me</button>
+-->
+<!--calling a method-->
+<!--
+<div class="row">
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6 bg-success">col-xl-3</div>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6 bg-success">col-xl-3</div>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6 bg-success">col-xl-3</div>
+</div>
+-->
+<div class="row">
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+    <div class="card" style="width:250px; height: 100px">
+    <img class="card-image" src = "assets\images\shirt.jpg">
+    <div class="card-body">
+        <h3 class="card-title">Shirt</h3>
+        <p class="card-text">This is an amazing shirt</p>
+        <h2>$500</h2>
+    <button class="btn btn-primary">Add to cart</button>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+        <div class="card" style="width:250px; height: 100px">
+        <img class="card-image" src = "assets\images\shirt.jpg">
+        <div class="card-body">
+            <h3 class="card-title">Shirt</h3>
+            <p class="card-text">This is an amazing shirt</p>
+            <h2>$500</h2>
+        <button class="btn btn-primary">Add to cart</button>
+        </div>
+        </div>
+        </div>
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-6">
+        <div class="card" style="width:250px; height: 100px">
+        <img class="card-image" src = "assets\images\shirt.jpg">
+        <div class="card-body">
+            <h3 class="card-title">Shirt</h3>
+            <p class="card-text">This is an amazing shirt</p>
+            <h2>$500</h2>
+        <button class="btn btn-primary">Add to cart</button>
+        </div>
+        </div>
+        </div>
+</div>

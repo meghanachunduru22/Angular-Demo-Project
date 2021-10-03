@@ -1,0 +1,15 @@
+<!--how to call child component from here-->
+
+<app-child
+[c_empId] = "e.empId"
+[c_empName] = "e.empName"
+[c_salary] = "e.salary"
+
+(send) = "showDetails($event)"
+
+*ngFor = "let e of employees">
+</app-child>
+
+<!--Data from the child component comes and stored into 
+$Client fires send event
+-->

@@ -1,0 +1,25 @@
+
+<!-- Using Pipes 
+creating pipes
+using stripped , hover effects on table
+-->
+<div class = "container">
+    <table class = "table table-bordered table-striped table-hover table-sm">
+        <thead>
+        <tr class = "bg-info text-white">
+            <th>ID</th><th>NAME</th><th>SALARY</th><th>GENDER</th><th>DOJ</th><th>Experience</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.empId}}</td>
+            <td>{{employee.empName | gender: employee.gender | uppercase}}</td>
+            <td>{{employee.salary | currency : "INR"}}</td>
+            <td>{{employee.gender | lowercase}}</td>
+            <td>{{employee.doj | date : 'dd-MM-yyyy hh-mm-ss'}}</td>        
+            <td>{{employee.doj | exp}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+    

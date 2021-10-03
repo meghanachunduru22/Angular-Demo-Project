@@ -1,0 +1,72 @@
+<!--
+Enter login id : <input type="text" [(ngModel)]="loginId"><br/>
+Enter password : <input type="password" [(ngModel)]="password"><br/> 
+<button (click)="loginSubmit()">Submit</button> 
+-->
+
+<!-- DOCUMENTATION
+Inorder to use ngmodel we should include forms module in appmodule.ts
+Submit button is used for hitting the request
+ts to html One way
+html to ts Two way
+this is two
+Angular model component - ngmodel - which we type in text box goes to loginId
+form - used for data validations
+button disabled is given because it only gates clicked when you enter the data
+-->
+
+
+<!--DATA VALIDATIONS-->
+<!--
+<form #loginForm="ngForm" (ngSubmit)="loginSubmit2(loginForm)" >
+
+    Enter login id: <input type="text"  ngModel name="loginId" ><br/>
+    Enter password : <input type ="password"  ngModel name= "password"><br/>
+    <button>Submit</button>
+</form>000
+-->
+<head>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+</head>
+
+
+<div class="container">
+    <form #loginForm="ngForm" (ngSubmit)="loginSubmit2(loginForm.value)" class="form-group" novalidate >
+        <div class="input-group">
+            <span class = "input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" placeholder="loginId" ngModel name="loginId" #loginid=ngModel class="form-control" 
+                required minlength=2 maxlength="20">
+        </div>
+        
+        
+        
+        <div class="input-group">
+            <span class = "input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input type ="password" placeholder="password" ngModel name= "password" #password=ngModel  class="form-control" 
+                required minlength=2 maxlength="20">
+
+        </div>
+
+    <button class="btn btn bg-primary" [disabled]="!loginForm.valid">Submit</button>
+    </form>
+    <div class="text-danger">
+    <div *ngIf="loginid.errors?.required && loginid.touched">Enter data into login id feild..</div>
+    <div *ngIf="loginid.errors?.minlength && loginid.touched">Enter data into login id feild at least 2 chars..</div>
+    
+    <div *ngIf="password.errors?.required && loginid.touched">Enter data into password feild..</div>
+    <div *ngIf="password.errors?.minlength && loginid.touched">Enter data into password feild atleast 2 chars..</div>
+    
+    </div>
+    </div>
+    
+
+    
+    <!--<form #loginForm="ngForm" (ngSubmit)="loginSubmit()" >
+    
+        Enter login id: <input type="text"  ngModel name="loginid"><br/>
+        Enter password : <input type ="password"  ngModel name= "password"><br/>
+        <button>Submit</button>
+    </form>-->
