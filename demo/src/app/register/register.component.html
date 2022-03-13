@@ -1,11 +1,14 @@
 
-<input type = "text" placeholder="ID" [(ngModel)]="details.empID"><br/>
-<input type = "text" placeholder="Name" [(ngModel)]="details.empName"><br/>
-<input type = "date" placeholder="DOJ" [(ngModel)]="details.DOJ"><br/>
-<input type = "text" placeholder="Salary" [(ngModel)]="details.salary"><br/>
-<input type = "text" placeholder="Gender" [(ngModel)]="details.gender"><br/>
+<input type = "text" placeholder="ID" [(ngModel)]="employee.empName"><br/>
+<input type = "text" placeholder="Name" [(ngModel)]="employee.empName"><br/>
+<input type = "date" placeholder="DOJ" [(ngModel)]="employee.doj"><br/>
+<input type = "number" placeholder="Salary" [(ngModel)]="employee.salary"><br/>
+<input type = "text" placeholder="Gender" [(ngModel)]="employee.gender"><br/>
+<input type = "text" placeholder="email" [(ngModel)]="employee.email"><br/>
+<input type = "password" placeholder="password" [(ngModel)]="employee.password"><br/>
 
-<input type = "submit" value="REGISTER" (click) = "showDetails()"><br/>
+<input type = "submit" value="REGISTER" (click) = "registerEmp()"><br/>
+<!-- <input type = "submit" value="REGISTER" (click) = "showDetails()"><br/> -->
 
 
 

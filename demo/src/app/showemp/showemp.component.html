@@ -3,21 +3,30 @@
 creating pipes
 using stripped , hover effects on table
 -->
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+</head>
+
 <div class = "container">
     <table class = "table table-bordered table-striped table-hover table-sm">
         <thead>
         <tr class = "bg-info text-white">
-            <th>ID</th><th>NAME</th><th>SALARY</th><th>GENDER</th><th>DOJ</th><th>Experience</th>
+            <th>ID</th><th>EMAIL</th><th>NAME</th><th>SALARY</th><th>GENDER</th><th>DOJ</th><th>Experience</th><th colspan=2>Actions</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let employee of employees">
-            <td>{{employee.empId}}</td>
+            <td>{{employee._id}}</td>
+            <td>{{employee.email}}</td>
             <td>{{employee.empName | gender: employee.gender | uppercase}}</td>
             <td>{{employee.salary | currency : "INR"}}</td>
             <td>{{employee.gender | lowercase}}</td>
             <td>{{employee.doj | date : 'dd-MM-yyyy hh-mm-ss'}}</td>        
             <td>{{employee.doj | exp}}</td>
+            <td><button (click)="deleteEmp(employee)" class="glyphicon glyphicon-trash" ></button></td>
+            <td><button class="glyphicon glyphicon-pencil" ></button></td>
         </tr>
         </tbody>
     </table>

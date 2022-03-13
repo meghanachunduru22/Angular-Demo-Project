@@ -6,11 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class GenderPipe implements PipeTransform {
 
   transform(value: any,gender:any):any {
-    if(gender.toLowerCase() === 'm'){
+    if(gender.toLowerCase() === 'male'){
       return 'Mr.'+value;
     }
     else
-    return 'Miss'+value;
+    return 'Miss. '+value;
   }
 
 }

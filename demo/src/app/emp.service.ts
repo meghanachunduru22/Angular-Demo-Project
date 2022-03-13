@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class EmpService {
   userLoggedIn : boolean;
-  constructor() {
+  constructor(private httpClient: HttpClient) {
     this.userLoggedIn = true; //Initially we se to false
 
    }
@@ -20,4 +21,17 @@ export class EmpService {
   setUserLoggedOut(){
     this.userLoggedIn = false; // invoked when we logged out
   }
-}
+  showAllEmployees(){
+    return this.httpClient.get("http://localhost:3000/fetch");
+  }
+  registerEmp(employee:any){
+     return this.httpClient.post('http//localhost:3000//register',employee);
+  }
+  getEmployeeByEmailAndPassword(loginForm:any){
+    return this.httpClient.get('http://localhost:3000/login/'+loginForm.email+"/"+loginForm.password).toPromise();
+  }
+  deleteEmp(employee:any){
+    return this.httpClient.delete('http://localhost:3000/delete/'+employee.email);
+  }
+
+  }

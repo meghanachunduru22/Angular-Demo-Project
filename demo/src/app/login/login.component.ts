@@ -44,12 +44,12 @@ export class LoginComponent implements OnInit {
     }
     
   }
-  loginSubmit2(loginForm : any): void{
+ async loginSubmit2(loginForm : any){
     //console.log(loginForm);
 
     //console.log(loginForm.value.loginId);
     //console.log(loginForm.value.password);
-    if(loginForm.loginId === 'HR' && loginForm.password === 'HR'){
+    if(loginForm.email === 'HR' && loginForm.password === 'HR'){
       //alert('Welcome to HR new Page....');
       //alert("TEST IN LOGIN.....");
       this.service.setUserLoggedIn();
@@ -57,15 +57,15 @@ export class LoginComponent implements OnInit {
 
     } 
     else {
-      this.employee.forEach((element:any) =>{
+      // this.employee.forEach((element:any) =>{
         this.service.setUserLoggedIn();
-        if(element.email === this.loginId){
+       await this.service.getEmployeeByEmailAndPassword(loginForm).then((result:any)=>{console.log(result);this.employee=result});
+       console.log("Data Fetched: ", this.employee);
+       if(this.employee!=null){
           alert("Welcome to Employee Home Page...")
         }       
       }
-      );
+      ;
       //alert('Login Falilure....')
     }
   }
-}
-

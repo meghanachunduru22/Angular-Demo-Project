@@ -37,7 +37,7 @@ button disabled is given because it only gates clicked when you enter the data
     <form #loginForm="ngForm" (ngSubmit)="loginSubmit2(loginForm.value)" class="form-group" novalidate >
         <div class="input-group">
             <span class = "input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input type="text" placeholder="loginId" ngModel name="loginId" #loginid=ngModel class="form-control" 
+            <input type="text" placeholder="email" ngModel name="email" #email=ngModel class="form-control" 
                 required minlength=2 maxlength="20">
         </div>
         
@@ -53,11 +53,11 @@ button disabled is given because it only gates clicked when you enter the data
     <button class="btn btn bg-primary" [disabled]="!loginForm.valid">Submit</button>
     </form>
     <div class="text-danger">
-    <div *ngIf="loginid.errors?.required && loginid.touched">Enter data into login id feild..</div>
-    <div *ngIf="loginid.errors?.minlength && loginid.touched">Enter data into login id feild at least 2 chars..</div>
+    <div *ngIf="email.errors?.required && email.touched">Enter data into login id feild..</div>
+    <div *ngIf="email.errors?.minlength && email.touched">Enter data into login id feild at least 2 chars..</div>
     
-    <div *ngIf="password.errors?.required && loginid.touched">Enter data into password feild..</div>
-    <div *ngIf="password.errors?.minlength && loginid.touched">Enter data into password feild atleast 2 chars..</div>
+    <div *ngIf="password.errors?.required && password.touched">Enter data into password feild..</div>
+    <div *ngIf="password.errors?.minlength && password.touched">Enter data into password feild atleast 2 chars..</div>
     
     </div>
     </div>
